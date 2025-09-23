@@ -1,2 +1,5 @@
 target
 target
+./.idea/compiler.xml
+/.idea/encodings.xml
+.DS_Store
