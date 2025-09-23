@@ -7,7 +7,7 @@ public class Login implements LoginInterface {
         boolean checkUserExists = true;
         String testpassword="test";
 
-        if(checkUserExists && password.equals(testpassword)){
+        if(checkUserExists && testpassword.equals(password)){
             return "User successfully logged in";
         }
         return "User does not exist or password incorrect";
