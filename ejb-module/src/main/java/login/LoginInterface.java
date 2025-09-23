@@ -1,6 +1,6 @@
 package login;
 
 public interface LoginInterface {
-    public void login();
-    public void logout();
+    public String login(String username, String password);
+    public String logout(String username);
 }
