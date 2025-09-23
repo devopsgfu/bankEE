@@ -9,20 +9,22 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/hello")
-public class HelloServlet extends HttpServlet {
-    
+@WebServlet("/address")
+public class AddressServlet extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        
+
+        String address = request.getParameter("address");
+
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");
         out.println("<h1>Hello from Jakarta EE Servlet!</h1>");
-        out.println("<p>Current time: " + new java.util.Date() + "</p>");
+        out.println("<p>Current Address: " + address+ "</p>");
         out.println("</body>");
         out.println("</html>");
 
