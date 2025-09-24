@@ -27,9 +27,8 @@ public class AddressServlet extends HttpServlet {
 
         String delete = request.getParameter("deleteAddress");
 
-        if("true".equals(delete)){
+        if("on".equalsIgnoreCase(delete)){
             addressInterface.removeAddress(address);
-
         } else {
             addressInterface.addAddress(address);
         }

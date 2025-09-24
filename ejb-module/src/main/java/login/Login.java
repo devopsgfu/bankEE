@@ -1,5 +1,8 @@
 package login;
 
+import jakarta.ejb.Stateless;
+
+@Stateless
 public class Login implements LoginInterface {
 
     @Override
