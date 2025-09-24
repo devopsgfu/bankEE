@@ -1,32 +1,29 @@
 package address;
 
 import jakarta.ejb.Stateless;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
 public class Address implements AddressInterface{
-    List<String> addresses = new ArrayList<>();
+    private List<String> addresses = new ArrayList<>(List.of("Testadresse"));
+
 
     @Override
-    public String addAddress(String address) {
-        if(address.isEmpty()){
-            return "Address is empty";
-        } else {
+    public void addAddress(String address) {
+        if(!address.isEmpty()){
             addresses.add(address);
-            return "Address is added to database";
         }
     }
 
     @Override
-    public String removeAddress(String address) {
-        if(address.isEmpty()){
-            return "Address is empty";
-        } else if (addresses.contains(address)) {
-            addresses.remove(address);
-            return "Address is remove from database";
-        }
-        return "";
+    public void removeAddress(String address) {
+        addresses.remove(address);
+
+    }
+
+    @Override
+    public List<String> getAddresses() {
+        return addresses;
     }
 }
