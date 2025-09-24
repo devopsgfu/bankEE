@@ -13,7 +13,7 @@
 
     <module>
         <web>
-            <web-uri>simple-webapp-1.0.0.war</web-uri>
+            <web-uri>web-module</web-uri>
             <context-root>/enterprise-app</context-root>
         </web>
     </module>

@@ -21,6 +21,7 @@ public class AddressServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         String address = request.getParameter("address");
