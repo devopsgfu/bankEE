@@ -4,6 +4,6 @@ import jakarta.ejb.Remote;
 
 @Remote
 public interface LoginInterface {
-     String login(String username, String password);
+     void login(String username, String password) throws Exception;
      String logout(String username);
 }
