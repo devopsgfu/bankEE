@@ -20,7 +20,7 @@
     <modules>
         <module>web-module</module>
         <module>ejb-module</module>
-        <module>ear-module</module>
+      <!--  <module>ear-module</module> -->
     </modules>
     
     <dependencyManagement>

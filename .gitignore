@@ -4,3 +4,5 @@ target
 /.idea/encodings.xml
 .DS_Store
 .idea/compiler.xml
+.idea/
+lib

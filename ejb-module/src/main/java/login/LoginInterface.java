@@ -1,6 +1,9 @@
 package login;
 
+import jakarta.ejb.Remote;
+
+@Remote
 public interface LoginInterface {
-    public String login(String username, String password);
-    public String logout(String username);
+     String login(String username, String password);
+     String logout(String username);
 }
