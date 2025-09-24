@@ -1,5 +1,7 @@
 package servlet;
 
+import address.AddressInterface;
+import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,6 +14,10 @@ import java.io.PrintWriter;
 @WebServlet("/address")
 public class AddressServlet extends HttpServlet {
 
+    @EJB
+    private AddressInterface addressInterface;
+    String return_value;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,11 +26,21 @@ public class AddressServlet extends HttpServlet {
 
         String address = request.getParameter("address");
 
+        String delete = request.getParameter("deleteAddress");
+
+        if("true".equals(delete)){
+           return_value = addressInterface.removeAddress(address);
+
+        } else {
+            return_value = addressInterface.addAddress(address);
+        }
+
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");
         out.println("<h1>Hello from Jakarta EE Servlet!</h1>");
         out.println("<p>Current Address: " + address+ "</p>");
+        out.println("<p>Ergebnis: " + return_value + "</p>");
         out.println("</body>");
         out.println("</html>");
 
