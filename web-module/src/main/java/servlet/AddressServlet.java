@@ -16,7 +16,6 @@ public class AddressServlet extends HttpServlet {
 
     @EJB
     private AddressInterface addressInterface;
-    String return_value;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -29,18 +28,17 @@ public class AddressServlet extends HttpServlet {
         String delete = request.getParameter("deleteAddress");
 
         if("true".equals(delete)){
-           return_value = addressInterface.removeAddress(address);
+            addressInterface.removeAddress(address);
 
         } else {
-            return_value = addressInterface.addAddress(address);
+            addressInterface.addAddress(address);
         }
 
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");
         out.println("<h1>Hello from Jakarta EE Servlet!</h1>");
-        out.println("<p>Current Address: " + address+ "</p>");
-        out.println("<p>Ergebnis: " + return_value + "</p>");
+        out.println("<p>Current Address: " + addressInterface.getAddresses() + "</p>");
         out.println("</body>");
         out.println("</html>");
 
