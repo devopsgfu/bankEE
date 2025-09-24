@@ -9,8 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import login.LoginInterface;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
