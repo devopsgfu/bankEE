@@ -1,4 +1,4 @@
-package address;
+package com.example.sharedejb;
 
 import jakarta.ejb.Remote;
 
