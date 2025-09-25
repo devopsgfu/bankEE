@@ -1,10 +1,24 @@
 package address.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String strasse;
     private String hNumber;
     private String postcode;
     private String city;
+
+    public Long getId() {
+        return id;
+    }
 
     public String getStrasse() {
         return strasse;

@@ -8,5 +8,5 @@ import java.util.List;
 public interface AddressInterface {
      void addAddress(String address);
      void removeAddress(String address);
-     List<String> getAddresses();
+     List<Object> getAddresses();
 }

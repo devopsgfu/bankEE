@@ -1,9 +1,14 @@
 package login;
 
 import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Stateless
 public class LoginBean implements LoginInterface {
+
+    @PersistenceContext(unitName = "bankPU")
+    private EntityManager em;
 
     @Override
     public void login(String username, String password) throws Exception {
