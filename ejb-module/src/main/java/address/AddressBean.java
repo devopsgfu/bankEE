@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 @Stateless
 public class AddressBean implements AddressInterface {
-    private List<String> addresses = new ArrayList<>(List.of("Testadresse"));
 
     @PersistenceContext(unitName = "bankPU")
     private EntityManager em;
