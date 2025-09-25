@@ -1,4 +1,4 @@
-package login;
+package com.example.sharedejb;
 
 import jakarta.ejb.Remote;
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-public class Address implements AddressInterface{
+public class Address implements address.AddressInterface {
     private List<String> addresses = new ArrayList<>(List.of("Testadresse"));
 
 

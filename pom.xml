@@ -21,6 +21,7 @@
         <module>web-module</module>
         <module>ejb-module</module>
         <module>ear-module</module>
+        <module>shared-ejb</module>
     </modules>
     
     <dependencyManagement>
