@@ -3,7 +3,7 @@ package login;
 import jakarta.ejb.Stateless;
 
 @Stateless
-public class Login implements login.LoginInterface {
+public class Login implements LoginInterface {
 
     @Override
     public void login(String username, String password) throws Exception {
