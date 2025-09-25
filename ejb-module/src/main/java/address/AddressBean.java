@@ -1,12 +1,14 @@
 package address;
 
 import address.entity.Address;
+import com.example.sharedejb.AddressInterface;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Stateless
 public class AddressBean implements AddressInterface {
@@ -30,8 +32,8 @@ public class AddressBean implements AddressInterface {
     }
 
     @Override
-    public List<Address> getAddresses() {
-
-        return em.createQuery("select a from Address a where a.id = :id", Address.class).getResultList();
+    public List<String> getAddresses() {
+        return em.createQuery("select a from Address a where a.id = :id", Address.class).getResultList().stream().
+                map(Address::getStrasse).collect(Collectors.toList());
     }
 }

@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>shared-ejb</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
