@@ -34,6 +34,7 @@ public class AddressServlet extends HttpServlet {
             addressInterface.addAddress(address);
         }
 
+
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");

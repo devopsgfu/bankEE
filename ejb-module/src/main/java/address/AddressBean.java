@@ -3,6 +3,7 @@ package address;
 import address.entity.Address;
 import com.example.sharedejb.AddressInterface;
 import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
@@ -16,9 +17,12 @@ public class AddressBean implements AddressInterface {
     @PersistenceContext(unitName = "bankPU")
     private EntityManager em;
 
+    @Inject
+    MapperInterface mapperInterface;
 
     @Override
     public void addAddress(String address) {
+        mapperInterface.destinationToSource():q
         if(!address.isEmpty()){
             em.persist(address);
         }
