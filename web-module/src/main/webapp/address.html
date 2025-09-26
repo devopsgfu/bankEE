@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Adresse</title>
-
+    <title>address</title>
 </head>
 <body>
-
 <form method="post" action="address">
     <label>Adresse löschen?</label>
     <input type="checkbox" name="deleteAddress" id="deleteAddress">
     <br>
-    <label for="address">Adresse: </label>
-        <input type="text" name="address" id="address" required>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <label for="street">Straße</label>
+    <input type="text" name="street" id="street"/><br>
+    <label for="hNumber">Hausnummer</label>
+    <input type="text" name="hNumber" id="hNumber"/><br>
+    <label for="plz">Plz</label>
+    <input type="text" name="plz" id="plz"/><br>
+    <label for="hNumber">Stadt</label>
+    <input type="text" name="city" id="city"/><br>
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>

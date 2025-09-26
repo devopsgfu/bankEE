@@ -1,5 +1,7 @@
 package com.example.sharedejb.dto;
 
+import java.util.Random;
+
 public class AddressDTO {
     private Long id;
 
@@ -7,6 +9,14 @@ public class AddressDTO {
     private String hNumber;
     private String postcode;
     private String city;
+
+    public AddressDTO(String strasse, String postcode, String hNumber, String city) {
+        this.strasse = strasse;
+        this.postcode = postcode;
+        this.hNumber = hNumber;
+        this.city = city;
+        this.id= new Random().nextLong();
+    }
 
     public Long getId() {
         return id;

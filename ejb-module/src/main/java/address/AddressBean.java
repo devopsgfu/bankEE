@@ -2,6 +2,7 @@ package address;
 
 import address.entity.Address;
 import com.example.sharedejb.AddressInterface;
+import com.example.sharedejb.dto.AddressDTO;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -18,21 +19,19 @@ public class AddressBean implements AddressInterface {
 
 
     @Override
-    public void addAddress(String address) {
-        if(!address.isEmpty()){
+    public void addAddress(AddressDTO address) {
+        if(!address.getStrasse().isEmpty()){
             em.persist(address);
         }
     }
 
     @Override
-    public void removeAddress(String address) {
+    public void removeAddress(AddressDTO address) {
         em.createQuery("delete from Address a where a.id = :id").setParameter("id", address).executeUpdate();
-//        addresses.remove(address);
     }
 
     @Override
-    public List<String> getAddresses() {
-        return em.createQuery("select a from Address a where a.id = :id", Address.class).getResultList().stream().
-                map(Address::getStrasse).collect(Collectors.toList());
+    public List<AddressDTO> getAddresses() {
+        return em.createQuery("select a from Address a where a.id = :id", Address.class).getResultList().stream().collect(Collectors.toList());
     }
 }

@@ -2,6 +2,7 @@ package servlet;
 
 
 import com.example.sharedejb.AddressInterface;
+import com.example.sharedejb.dto.AddressDTO;
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -27,11 +28,11 @@ public class AddressServlet extends HttpServlet {
         String address = request.getParameter("address");
 
         String delete = request.getParameter("deleteAddress");
-
+        AddressDTO addressDTO = new AddressDTO(request.getParameter("street"),request.getParameter("plz"), request.getParameter("hNumber"), request.getParameter("city"));
         if("on".equalsIgnoreCase(delete)){
-            addressInterface.removeAddress(address);
+            addressInterface.removeAddress(addressDTO);
         } else {
-            addressInterface.addAddress(address);
+            addressInterface.addAddress(addressDTO);
         }
 
         out.println("<html>");
