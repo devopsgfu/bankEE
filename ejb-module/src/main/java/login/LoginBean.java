@@ -1,5 +1,6 @@
 package login;
 
+import com.example.sharedejb.LoginInterface;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
