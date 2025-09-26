@@ -1,6 +1,7 @@
 package servlet;
 
-import address.AddressInterface;
+
+import com.example.sharedejb.AddressInterface;
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,11 +34,12 @@ public class AddressServlet extends HttpServlet {
             addressInterface.addAddress(address);
         }
 
+
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");
         out.println("<h1>Hello from Jakarta EE Servlet!</h1>");
-        out.println("<p>Current Address: " + addressInterface.getAddresses() + "</p>");
+        out.println("<p>Current Address: " + addressInterface.getAddresses().toString() + "</p>");
         out.println("</body>");
         out.println("</html>");
 
