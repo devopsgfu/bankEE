@@ -7,3 +7,4 @@ target
 .idea/
 lib
 bankEE.iml
+ejb-module/ejb-module.iml

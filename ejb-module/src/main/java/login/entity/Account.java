@@ -2,7 +2,14 @@ package login.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
+
+
+@NamedQuery(
+        name = "Account.findByUsername",
+        query = "SELECT a FROM Account a WHERE a.username=:username"
+)
 @Entity
 public class Account {
 

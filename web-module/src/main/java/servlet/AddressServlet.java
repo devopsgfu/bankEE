@@ -35,6 +35,7 @@ public class AddressServlet extends HttpServlet {
             addressInterface.addAddress(addressDTO);
         }
 
+
         out.println("<html>");
         out.println("<head><title>Hello Jakarta EE</title></head>");
         out.println("<body>");
